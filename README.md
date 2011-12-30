@@ -1,15 +1,10 @@
 ## Setup
 
-1. Install RVM
-2. `bundle install`
-3. Add your classes to monitor in monitor.rb
-4. Add monitor.rb to your crontab at whatever interval you decide:
-
-	SHELL=/bin/bash
-	BASH_ENV=/Users/russell/.bash_profile
-	
-	* * * * * $HOME/Code/CourseMonitor/monitor.rb
-	
+1. Checkout the app to ~/Code/CourseMonitor
+2. Install RVM
+3. `bundle install`
+4. Add your classes to monitor in monitor.rb
+5. Add Monitor.app to your Mac Login Items.
 
 ## TODO
 

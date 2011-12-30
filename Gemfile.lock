@@ -14,7 +14,6 @@ GEM
     net-http-persistent (2.3.3)
     nokogiri (1.5.0)
     ntlm-http (0.1.1)
-    ruby-growl (3.0)
     ruby_gntp (0.3.4)
     unf (0.0.4)
       unf_ext
@@ -27,5 +26,4 @@ PLATFORMS
 
 DEPENDENCIES
   mechanize (~> 2.1)
-  ruby-growl (~> 3.0)
   ruby_gntp (~> 0.3.4)

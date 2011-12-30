@@ -34,10 +34,10 @@ class CourseChecker
 		a.get("https://courses.students.ubc.ca/cs/main?pname=subjarea&tname=subjareas&req=5&dept=#{course.department}&course=#{course.number}&section=#{course.section}") do |page|
 			unless page.body.include? 'Note: this section is full' then
 				# class isn't full
-				Growl.notify "UBC Course Availability", "#{course.name} is currently available!", :yes
+				Growl.notify "UBC Course Availability", "#{course.name} is currently available!", :yes, true
 			else
 				# class is full
-				Growl.notify "UBC Course Availability", "#{course.name} is not available", :no
+				# For testing: Growl.notify "UBC Course Availability", "#{course.name} is not available", :no
 			end
 		end
 	end
@@ -79,11 +79,18 @@ class Course
 	end
 end
 
-courses = ['GERM100-011']
-courses.map! { |course|
-	Course.new(course)
-}
-
-courses.each { |course|
-	CourseChecker.check(course)
-}
+loop do
+	begin
+		courses = ['GERM100-011']
+		courses.map! { |course|
+			Course.new(course)
+		}
+		
+		courses.each { |course|
+			CourseChecker.check(course)
+		}
+		sleep 60
+	rescue
+		
+	end
+end
